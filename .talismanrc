@@ -1,0 +1,4 @@
+fileignoreconfig:
+- filename: tests/test_tools.py
+  checksum: 7165dda68b0e508489a2e34b00d4829edef2b78a1e3d27637c1551ef3a61708c
+version: ""

@@ -89,3 +89,11 @@ def get_all_dialects():
     """
     dialects = [dialect.name for dialect in sqlfluff.list_dialects()]
     return dialects
+
+
+def main():
+    mcp.run()
+
+
+if __name__ == "__main__":
+    main()
