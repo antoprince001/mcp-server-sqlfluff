@@ -1,6 +1,7 @@
 from mcp.server.fastmcp import FastMCP
 from pydantic import BaseModel
 from tools import lint_sql_tool, fix_sql_tool, parse_sql_tool
+import sqlfluff
 
 mcp = FastMCP("SQLFluff MCP")
 
@@ -65,3 +66,15 @@ def parse_sql(request: SQLRequest):
         return parsed_result
     except Exception as e:
         return {"error": str(e)}
+
+
+@mcp.resource("dialects://all")
+def get_all_dialects():
+    """
+    Get all supported SQL dialects.
+
+    Returns:
+        List of supported SQL dialects.
+    """
+    dialects = [dialect.name for dialect in sqlfluff.list_dialects()]
+    return dialects
