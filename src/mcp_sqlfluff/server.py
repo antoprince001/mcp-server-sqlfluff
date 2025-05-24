@@ -23,7 +23,18 @@ def lint_sql(request: SQLRequest):
         dialect: Optional SQL dialect (e.g., 'mysql', 'postgresql')
 
     Returns:
-        error message or "No syntax errors" if parsing succeeds
+        List of linting results, each containing:
+            - start_line_no: Line number where the issue starts
+            - start_line_pos: Position in the line where the issue starts
+            - code: Error code
+            - description: Description of the issue
+            - name: Name of the linting rule
+            - warning: Whether it's a warning or an error
+            - fixes: List of possible fixes
+            - start_file_pos: Start position in the file
+            - end_line_no: Line number where the issue ends
+            - end_line_pos: Position in the line where the issue ends
+            - end_file_pos: End position in the file
     """
     try:
         results = lint_sql_tool(request.sql, dialect=request.dialect)
