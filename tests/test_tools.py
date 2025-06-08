@@ -1,4 +1,4 @@
-from src.mcp_sqlfluff.tools import lint_sql_tool, fix_sql_tool, parse_sql_tool
+from src.mcp_server_sqlfluff.tools import lint_sql_tool, fix_sql_tool, parse_sql_tool
 
 
 def test_lint_sql_tool():
