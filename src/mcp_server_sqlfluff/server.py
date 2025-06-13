@@ -1,7 +1,7 @@
 import sqlfluff
 from mcp.server.fastmcp import FastMCP
 from pydantic import BaseModel
-from tools import fix_sql_tool, lint_sql_tool, parse_sql_tool
+from mcp_server_sqlfluff.tools import fix_sql_tool, lint_sql_tool, parse_sql_tool
 
 mcp = FastMCP("SQLFluff MCP")
 
@@ -92,6 +92,7 @@ def get_all_dialects():
 
 
 def main():
+    print("Starting SQLFluff MCP server...")
     mcp.run()
 
 
