@@ -1,7 +1,7 @@
+import sqlfluff
 from mcp.server.fastmcp import FastMCP
 from pydantic import BaseModel
-from tools import lint_sql_tool, fix_sql_tool, parse_sql_tool
-import sqlfluff
+from tools import fix_sql_tool, lint_sql_tool, parse_sql_tool
 
 mcp = FastMCP("SQLFluff MCP")
 
