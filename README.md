@@ -13,33 +13,6 @@ The sqlfluff MCP server provides tools for analyzing and working with SQL querie
 ## Tools
 
 1. lint_sql
-   - Validates SQL query syntax and returns any errors
-   - Input:
-     - sql (string): SQL query to analyze
-     - dialect (string, optional): SQL dialect (e.g., 'mysql', 'postgresql')
-   - Returns: ParseResult containing:
-     - is_valid (boolean): Whether the SQL is valid
-     - message (string): Error message or "No syntax errors"
-     - position (object, optional): Line and column of error if present
-
-
-
-
-    Returns:
-        List of linting results, each containing:
-            - start_line_no: Line number where the issue starts
-            - start_line_pos: Position in the line where the issue starts
-            - code: Error code
-            - description: Description of the issue
-            - name: Name of the linting rule
-            - warning: Whether it's a warning or an error
-            - fixes: List of possible fixes
-            - start_file_pos: Start position in the file
-            - end_line_no: Line number where the issue ends
-            - end_line_pos: Position in the line where the issue ends
-            - end_file_pos: End position in the file
-
-1. lint_sql
   - Lint SQL query and return syntax errors. Some syntax errors are not detected by the parser like trailing commas.
   - Inputs:
     - sql (string): SQL query to analyze.
@@ -108,7 +81,7 @@ Add this to your `cline_mcp_settings.json`:
 
 ### Using uv
 
-After cloning this repo, add this to your `cline_mcp_settings.json`:
+After cloning this repo, add this to your MCP client config file::
 
 ```json
 {
@@ -146,4 +119,5 @@ uv run pytest .
 
 ## License
 
-MIT
+Released under the MIT License. See the LICENSE file for details.
+
