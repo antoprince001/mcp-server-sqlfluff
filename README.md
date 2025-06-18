@@ -62,16 +62,16 @@ Returns a list of all supported SQL dialects for use in all tools.
 
 ### Using uvx
 
-Add this to your `cline_mcp_settings.json`:
+Add this to your your MCP client config file:
 
 ```json
 {
   "mcpServers": {
-      "sql-analyzer": {
+      "mcp-server-sqlfluff": {
           "command": "uvx",
           "args": [
               "--from",
-              "git+https://github.com/j4c0bs/mcp-server-sqlfluff.git",
+              "git+https://github.com/antoprince001/mcp-server-sqlfluff.git",
               "mcp-server-sqlfluff"
           ]
       }
@@ -81,16 +81,17 @@ Add this to your `cline_mcp_settings.json`:
 
 ### Using uv
 
-After cloning this repo, add this to your MCP client config file::
+After cloning this repo, add this to your MCP client config file:
 
 ```json
 {
   "mcpServers": {
-      "sql-fluff": {
-          "command": "uvx",
+      "mcp-server-sqlfluff": {
+          "command": "uv",
           "args": [
-              "--from",
-              "git+https://github.com/antoprince001/mcp-server-sqlfluff.git",
+              "--directory",
+              "/path/to/mcp-server-sqlfluff",
+              "run",
               "mcp-server-sqlfluff"
           ]
       }
