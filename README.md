@@ -86,12 +86,11 @@ After cloning this repo, add this to your MCP client config file::
 ```json
 {
   "mcpServers": {
-      "sql-analyzer": {
-          "command": "uv",
+      "sql-fluff": {
+          "command": "uvx",
           "args": [
-              "--directory",
-              "/path/to/mcp-server-sqlfluff",
-              "run",
+              "--from",
+              "git+https://github.com/antoprince001/mcp-server-sqlfluff.git",
               "mcp-server-sqlfluff"
           ]
       }
